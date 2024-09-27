@@ -250,4 +250,3 @@ Solve Exercise 16 here:
 */
 console.log('Exercise 16');
 console.log(game);
-console.log(`the number of player in the party is: ${game.partyCount()}`);
