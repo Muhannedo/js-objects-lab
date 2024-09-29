@@ -1,29 +1,29 @@
-const pokemon = require('./data.js')
+const pokemon = require("./data.js");
 const game = {
-    party: [],
-    gyms: [
-      { location: "Pewter City", completed: false, difficulty: 1 },
-      { location: "Cerulean City", completed: false, difficulty: 2 },
-      { location: "Vermilion City", completed: false, difficulty: 3 },
-      { location: "Celadon City", completed: false, difficulty: 4 },
-      { location: "Fuchsia City", completed: false, difficulty: 5 },
-      { location: "Saffron City", completed: false, difficulty: 6 },
-      { location: "Cinnabar Island", completed: false, difficulty: 7 },
-      { location: "Viridian City", completed: false, difficulty: 8 },
-    ],
-    items: [
-      { name: "potion", quantity: 4 },
-      { name: "pokeball", quantity: 8 },
-      { name: "rare candy", quantity: 99 },
-    ],
-  }
-  //Exercise 1
-  console.log('Exercise 1');
-  console.dir(pokemon, { maxArrayLength: null });
-  //Exercise 2
-  console.log('Exercise 2');
-  console.log(game);
-  /*
+  party: [],
+  gyms: [
+    { location: "Pewter City", completed: false, difficulty: 1 },
+    { location: "Cerulean City", completed: false, difficulty: 2 },
+    { location: "Vermilion City", completed: false, difficulty: 3 },
+    { location: "Celadon City", completed: false, difficulty: 4 },
+    { location: "Fuchsia City", completed: false, difficulty: 5 },
+    { location: "Saffron City", completed: false, difficulty: 6 },
+    { location: "Cinnabar Island", completed: false, difficulty: 7 },
+    { location: "Viridian City", completed: false, difficulty: 8 },
+  ],
+  items: [
+    { name: "potion", quantity: 4 },
+    { name: "pokeball", quantity: 8 },
+    { name: "rare candy", quantity: 99 },
+  ],
+};
+//Exercise 1
+console.log("Exercise 1");
+console.dir(pokemon, { maxArrayLength: null });
+//Exercise 2
+console.log("Exercise 2");
+console.log(game);
+/*
 Exercise 3
 1. Add a new property to the `game` object. Let's call it "difficulty".
 2. Choose a value for "difficulty" that you think fits the game. Ex: "Easy", "Med" or "Hard". How would you assign it?
@@ -31,9 +31,9 @@ Exercise 3
 
 Solve Exercise 3 here:
 */
-  console.log('Exercise 3');
-  game.difficulty = "Normal";
-  console.log(game.difficulty);
+console.log("Exercise 3");
+game.difficulty = "Normal";
+console.log(game.difficulty);
 /*
 Exercise 4
 1. Select a starter Pokémon from the `pokemon` array. Remember, a starter Pokémon's `starter` property is true.
@@ -42,10 +42,10 @@ Exercise 4
 
 Solve Exercise 4 here:
 */
-console.log('Exercise 4');
-  const trueStarter = pokemon[0];
-  game.party.push(trueStarter);
-  console.log(game);
+console.log("Exercise 4");
+const trueStarter = pokemon[0];
+game.party.push(trueStarter);
+console.log(game);
 /*
 Exercise 5
 1. Choose three more Pokémon from the `pokemon` array and add them to your party.
@@ -54,7 +54,7 @@ Exercise 5
 
 Solve Exercise 5 here:
 */
-console.log('Exercise 5');
+console.log("Exercise 5");
 game.party.push(pokemon[25]);
 game.party.push(pokemon[91]);
 game.party.push(pokemon[4]);
@@ -67,12 +67,12 @@ Exercise 6
 
 Solve Exercise 6 here:
 */
-console.log('Exercise 6');
-game.gyms.forEach(gymCompleted => {
-    if (gymCompleted.difficulty < 3) {
-        gymCompleted.completed = true;
-    }
-  });
+console.log("Exercise 6");
+game.gyms.forEach((gymCompleted) => {
+  if (gymCompleted.difficulty < 3) {
+    gymCompleted.completed = true;
+  }
+});
 console.log(game.gyms);
 /*
 Exercise 7
@@ -90,8 +90,8 @@ More Hints: The existing starter Pokemon will be *replaced* in your party with t
 
 Solve Exercise 7 here:
 */
-console.log('Exercise 7');
-pokemon.splice(0 ,0 ,pokemon[1]);
+console.log("Exercise 7");
+pokemon.splice(0, 0, pokemon[1]);
 console.log(game);
 /*
 Exercise 8
@@ -100,9 +100,9 @@ Exercise 8
 
 Solve Exercise 8 here:
 */
-console.log('Exercise 8');
-game.party.forEach(pokemonName =>{
-    console.log(pokemonName.name);
+console.log("Exercise 8");
+game.party.forEach((pokemonName) => {
+  console.log(pokemonName.name);
 });
 /*
 Exercise 9
@@ -112,12 +112,11 @@ Exercise 9
 
 Solve Exercise 9 here:
 */
-console.log('Exercise 9');
-pokemon.forEach(poke =>{
-    if(poke.starter === true){
+console.log("Exercise 9");
+pokemon.forEach((poke) => {
+  if (poke.starter === true) {
     console.log(poke.name);
-    }
-
+  }
 });
 /*
 Exercise 10
@@ -130,9 +129,9 @@ After writing this method, call it and pass in a Pokemon object of your choice f
 
 Solve Exercise 10 here:
 */
-console.log('Exercise 10');
-game.catchPokemon = function(pokemonObj){
-game.party.push(pokemonObj);
+console.log("Exercise 10");
+game.catchPokemon = function (pokemonObj) {
+  game.party.push(pokemonObj);
 };
 game.catchPokemon(pokemon[100]);
 console.log(game);
@@ -148,11 +147,11 @@ Also, log the `game.items` array to confirm that the pokeball quantity is being 
 
 Solve Exercise 11 here:
 */
-console.log('Exercise 11');
-game.catchPokemon = function(pokemonObj){
-game.party.push(pokemonObj);
-game.items[1].quantity = game.items[1].quantity -1 ;
-}
+console.log("Exercise 11");
+game.catchPokemon = function (pokemonObj) {
+  game.party.push(pokemonObj);
+  game.items[1].quantity = game.items[1].quantity - 1;
+};
 game.catchPokemon(pokemon[10]);
 console.log(game.items);
 /*
@@ -162,12 +161,12 @@ Exercise 12
 
 Solve Exercise 12 here:
 */
-console.log('Exercise 12');
-game.gyms.forEach(gymCompleted => {
-    if (gymCompleted.difficulty < 6) {
-        gymCompleted.completed = true;
-    }
-  });
+console.log("Exercise 12");
+game.gyms.forEach((gymCompleted) => {
+  if (gymCompleted.difficulty < 6) {
+    gymCompleted.completed = true;
+  }
+});
 console.log(game.gyms);
 /*
 Exercise 13
@@ -191,24 +190,22 @@ For example, if five gym objects have a value of `true` on their `completed` pro
 
 Solve Exercise 13 here:
 */
-console.log('Exercise 13');
-game.gymStatus = function(){
+console.log("Exercise 13");
+game.gymStatus = function () {
   const gymTally = {
-    completed :0 ,
-    incomplete: 0
-  }
-  for(poky of game.gyms){
-    if(poky.completed){
+    completed: 0,
+    incomplete: 0,
+  };
+  for (poky of game.gyms) {
+    if (poky.completed) {
       gymTally.completed++;
-    }
-    else {
+    } else {
       gymTally.incomplete++;
     }
-
   }
   console.log(gymTally);
-  };
-  game.gymStatus();
+};
+game.gymStatus();
 
 /*
 Exercise 14
@@ -221,10 +218,10 @@ This method should:
 
 Solve Exercise 14 here:
 */
-console.log('Exercise 14');
-game.partyCount = function(){
-let counter = game.party.length ;
-return counter
+console.log("Exercise 14");
+game.partyCount = function () {
+  let counter = game.party.length;
+  return counter;
 };
 console.log(`the number of player in the party is: ${game.partyCount()}`);
 /*
@@ -234,10 +231,10 @@ Exercise 15
 
 Solve Exercise 15 here:
 */
-console.log('Exercise 15');
-game.gyms.forEach(gymCompleted => {
+console.log("Exercise 15");
+game.gyms.forEach((gymCompleted) => {
   if (gymCompleted.difficulty < 8) {
-      gymCompleted.completed = true;
+    gymCompleted.completed = true;
   }
 });
 console.log(game.gyms);
@@ -248,5 +245,5 @@ Exercise 16
 
 Solve Exercise 16 here:
 */
-console.log('Exercise 16');
+console.log("Exercise 16");
 console.log(game);
